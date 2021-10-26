@@ -1,0 +1,33 @@
+Tutorial 6.2 Theory Questions
+
+
+Name: Naima Elosegui Borras
+Student ID: 20-742-755	
+Email: nelosegui@student.ethz.ch
+
+
+Question 3.1: When changing the output readings from mean membrane potential to mean number of spikes, what would you expect to happen wrt learning if we did not use the surrogate gradient?
+
+If we were looking at the mean number of spikes without using the surrogate gradient, the derivative of the loss function would be the derivative of the average of Heaviside functions and would be zero everywhere, except where a spike occurs. At the time when a spike happens, the derivative is not well defined. This would lead to the initial weights and biases to be the same as the output ones, thus there would be no learning.
+
+Answer: --- **Remark** - Answer should be less than 200 words. ---
+
+
+Question 3.2: In our current implementation, does the computation of the activation of a neuron in layer l+1 at time t occurs before or after the computation of the activation of a neuron in layer l at time t+1?
+
+Theoretically, the activation in layer l+1 at time t is only dependent on t-1 in layer l, thus either update could be performed first. In our implementation, the whole layer previous layer is passed to compute each of the activations at each time step. Hence, the computation of the activation of a neutron in layer l at time t+1 occurs before that of a neutron in l+1 at time t.
+
+
+Answer: --- **Remark** - Answer should be less than 200 words. ---
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+Tutorial 6.1 Theory Question
+
+
+Name: Naima Elosegui Borras
+Student ID: 20-742-755	
+Email: nelosegui@student.ethz.ch
+
+
+Question: Observe the performance of the current implementation (i.e. in terms of correctly
+classified images) and discuss what the reason is for obtaining these poor results. As a hint, you can plot the distributions of the weights before and after training using the command line argument --plot_weight_hist.
+
+Answer: --- **Remark** - Answer should be less than 200 words. ---
+
+When looking at the weights from the hidden layer to the output, we see that these are updated after training, yet the ones from the input to the hidden layer are not. When the derivative of the loss function with respect to the weights is taken, it can be propagated backwards only from the output layer to the hidden layer, as it does not involve computing the derivative of the spikes. As the spikes are discretised using a Heaviside step function, they are non-differentiable. The derivative at the spike function when a spike occurs is not defined and zero elsewhere. This does not allow for the derivative of the loss function to be back propagated to the input layer and for the weights to be learned. As the weights are only learned in the output layer, the accuracy of the predictions are low. 
+
+
+
+
+
+
+
+
+
